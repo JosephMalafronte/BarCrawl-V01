@@ -1,0 +1,6 @@
+framework module Pods_BarCrawlV01 {
+  umbrella header "Pods-BarCrawlV01-umbrella.h"
+
+  export *
+  module * { export * }
+}
