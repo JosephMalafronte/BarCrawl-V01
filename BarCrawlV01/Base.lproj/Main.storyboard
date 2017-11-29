@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="jGn-eY-Tye">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--BarCrawl-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BarCrawlV01" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rqv-JW-Pdw">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <items>
+                                    <barButtonItem title="Item" id="80H-Hu-WUh"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="wzO-TN-6ys"/>
+                                    <barButtonItem title="Item" id="gG0-2V-6R1"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="KiZ-Wf-KhD"/>
+                                    <barButtonItem title="Item" id="mCs-kd-O7V"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="hsB-pt-K2O"/>
+                                    <barButtonItem title="Item" id="iAj-jH-Mhe"/>
+                                </items>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="barTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </toolbar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="257" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aI4-Mz-9hl">
+                                <rect key="frame" x="0.0" y="64" width="375" height="559"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexBackgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexTrackingBackgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="barCell" rowHeight="257" id="FGp-Vg-7t5" customClass="ViewControllerTableViewCell" customModule="BarCrawlV01" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="257"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FGp-Vg-7t5" id="3Px-WG-ECk">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="257"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fuj-vB-Bac">
+                                                    <rect key="frame" x="32" y="213" width="42" height="43"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="burger" translatesAutoresizingMaskIntoConstraints="NO" id="vLg-Yg-qay">
+                                                    <rect key="frame" x="-62" y="-24" width="375" height="256.5"/>
+                                                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="vLg-Yg-qay" firstAttribute="bottom" secondItem="3Px-WG-ECk" secondAttribute="bottom" constant="30" id="2fY-xQ-HEu"/>
+                                                <constraint firstItem="vLg-Yg-qay" firstAttribute="trailing" secondItem="3Px-WG-ECk" secondAttribute="trailing" constant="10" id="HAY-h6-wFG"/>
+                                                <constraint firstItem="vLg-Yg-qay" firstAttribute="leading" secondItem="3Px-WG-ECk" secondAttribute="leading" constant="-10" id="pdP-zD-Pja"/>
+                                                <constraint firstItem="vLg-Yg-qay" firstAttribute="top" secondItem="3Px-WG-ECk" secondAttribute="top" constant="-10" id="w3f-Wv-BGh"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="barImage" destination="vLg-Yg-qay" id="fLU-BU-1f9"/>
+                                            <outlet property="barName" destination="Fuj-vB-Bac" id="uJL-x2-wjt"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="aI4-Mz-9hl" secondAttribute="trailing" id="0tW-u7-l3C"/>
+                            <constraint firstItem="Rqv-JW-Pdw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="CnM-Kp-LMY"/>
+                            <constraint firstItem="aI4-Mz-9hl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Egp-zu-cWM"/>
+                            <constraint firstItem="Rqv-JW-Pdw" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="PCd-1W-wOA"/>
+                            <constraint firstItem="Rqv-JW-Pdw" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="559" id="RgR-SV-djV"/>
+                            <constraint firstItem="Rqv-JW-Pdw" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="sTm-6Q-z7P"/>
+                            <constraint firstItem="aI4-Mz-9hl" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="wtq-HN-Kur"/>
+                            <constraint firstItem="Rqv-JW-Pdw" firstAttribute="top" secondItem="aI4-Mz-9hl" secondAttribute="bottom" id="zCA-XC-hC1"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="BarCrawl" id="mKH-oz-Rqw"/>
+                    <connections>
+                        <outlet property="tableView" destination="aI4-Mz-9hl" id="v4u-ef-WYp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1560.8" y="151.57421289355324"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="GA4-St-kTm">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jGn-eY-Tye" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="TLb-45-zev">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Jti-cT-O3b"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IPH-9G-fiE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="718" y="152"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="burger" width="3269" height="2175"/>
+    </resources>
+</document>
