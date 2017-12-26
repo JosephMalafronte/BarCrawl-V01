@@ -24,11 +24,23 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     var allBarDisplaysCached = false
     
     
-    //Set white status bar
+    //Load First
     override func viewWillAppear(_ animated: Bool) {
+        //Set White Status Bar
         super.viewWillAppear(animated)
         UIApplication.shared.statusBarStyle = .lightContent
+        
+        //Hide Nav Controller
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
     }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        self.navigationController?.setNavigationBarHidden(false, animated: animated)
+    }
+    
+    
     override var preferredStatusBarStyle : UIStatusBarStyle {
         return .lightContent
     }
@@ -36,7 +48,8 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     
     @IBOutlet var HomeView: UIView!
     
-    
+    let overlayLogo = LoadingOverlayLogo()
+
     
     override func viewDidLoad() {
         
@@ -47,7 +60,6 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         tableView.dataSource=self
         
         //Loading Overlay
-        let overlayLogo = LoadingOverlayLogo()
         overlayLogo.showOverlay(view: HomeView)
         
         //Set the firebase ref
@@ -90,11 +102,14 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
                 if(self.allBarDisplaysCached == false){
                     print("Done Loading All Images!")
                     self.allBarDisplaysCached = true
+                    
                 }
                 else {
-                    print("All Images Allready loaded")
+                    print("All Images All ready loaded")
+                    
                 }
-                
+                overlayLogo.hideOverlayView()
+                self.viewWillDisappear(false)
             }
             numDownloadCache.setObject(cachedNumObj, forKey: "num" as AnyObject)
         }
