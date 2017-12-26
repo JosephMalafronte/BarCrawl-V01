@@ -21,13 +21,21 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rqv-JW-Pdw">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <items>
-                                    <barButtonItem title="Item" id="80H-Hu-WUh"/>
+                                    <barButtonItem systemItem="done" id="80H-Hu-WUh">
+                                        <color key="tintColor" red="0.94972819089889526" green="0.7828596830368042" blue="0.2734076976776123" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="wzO-TN-6ys"/>
-                                    <barButtonItem title="Item" id="gG0-2V-6R1"/>
+                                    <barButtonItem systemItem="search" id="gG0-2V-6R1">
+                                        <color key="tintColor" red="0.94972819090000005" green="0.78285968299999997" blue="0.27340769770000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="KiZ-Wf-KhD"/>
-                                    <barButtonItem title="Item" id="mCs-kd-O7V"/>
+                                    <barButtonItem systemItem="bookmarks" id="mCs-kd-O7V">
+                                        <color key="tintColor" red="0.94972819090000005" green="0.78285968299999997" blue="0.27340769770000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="hsB-pt-K2O"/>
-                                    <barButtonItem title="Item" id="iAj-jH-Mhe"/>
+                                    <barButtonItem systemItem="organize" id="iAj-jH-Mhe">
+                                        <color key="tintColor" red="0.94972819090000005" green="0.78285968299999997" blue="0.27340769770000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </barButtonItem>
                                 </items>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="barTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

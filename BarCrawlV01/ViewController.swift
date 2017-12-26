@@ -59,6 +59,11 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         tableView.delegate=self
         tableView.dataSource=self
         
+        let logo = UIImage(named: "TextLogoNoBack.png")
+        let imageView = UIImageView(image:logo)
+        imageView.contentMode = .scaleAspectFit
+        self.navigationItem.titleView = imageView
+        
         //Loading Overlay
         overlayLogo.showOverlay(view: HomeView)
         
