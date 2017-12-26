@@ -23,6 +23,21 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     var barDisplays = [barDisplay]()
     var allBarDisplaysCached = false
     
+    
+    //Set white status bar
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        UIApplication.shared.statusBarStyle = .lightContent
+    }
+    override var preferredStatusBarStyle : UIStatusBarStyle {
+        return .lightContent
+    }
+    
+    
+    @IBOutlet var HomeView: UIView!
+    
+    
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -30,6 +45,10 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         
         tableView.delegate=self
         tableView.dataSource=self
+        
+        //Loading Overlay
+        let overlayLogo = LoadingOverlayLogo()
+        overlayLogo.showOverlay(view: HomeView)
         
         //Set the firebase ref
         ref = Database.database().reference()
@@ -138,11 +157,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         
         
         
-        
-        
-        
-        
-        //End Paste
+    
         
         
         

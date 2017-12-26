@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5DFECB7D0BBE95475F2133D5 /* Pods_BarCrawlV01.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BCF106152134E16E8B928887 /* Pods_BarCrawlV01.framework */; };
+		F608F9E91FF22017005A3694 /* LoadingOverlayLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F608F9E81FF22017005A3694 /* LoadingOverlayLogo.swift */; };
 		F693EADB1FCDF07900FAD47A /* downloadCounter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F693EADA1FCDF07900FAD47A /* downloadCounter.swift */; };
 		F693EADF1FCE49E800FAD47A /* burger.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = F693EADE1FCE49E700FAD47A /* burger.jpeg */; };
 		F6A448DF1FCCC875007F9237 /* barDisplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6A448DE1FCCC875007F9237 /* barDisplay.swift */; };
@@ -25,6 +26,7 @@
 		BCF106152134E16E8B928887 /* Pods_BarCrawlV01.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BarCrawlV01.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9574D8D64B885741CBE5DA7 /* Pods-BarCrawlV01.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BarCrawlV01.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BarCrawlV01/Pods-BarCrawlV01.debug.xcconfig"; sourceTree = "<group>"; };
 		F5ECEDC2C77CEAAA0719CFEE /* Pods-BarCrawlV01.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BarCrawlV01.release.xcconfig"; path = "Pods/Target Support Files/Pods-BarCrawlV01/Pods-BarCrawlV01.release.xcconfig"; sourceTree = "<group>"; };
+		F608F9E81FF22017005A3694 /* LoadingOverlayLogo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingOverlayLogo.swift; sourceTree = "<group>"; };
 		F693EADA1FCDF07900FAD47A /* downloadCounter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = downloadCounter.swift; sourceTree = "<group>"; };
 		F693EADE1FCE49E700FAD47A /* burger.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = burger.jpeg; sourceTree = SOURCE_ROOT; };
 		F6A448DE1FCCC875007F9237 /* barDisplay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = barDisplay.swift; sourceTree = "<group>"; };
@@ -74,6 +76,7 @@
 			children = (
 				F6A448DE1FCCC875007F9237 /* barDisplay.swift */,
 				F693EADA1FCDF07900FAD47A /* downloadCounter.swift */,
+				F608F9E81FF22017005A3694 /* LoadingOverlayLogo.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 				F6E653181FCCC01700881789 /* ViewController.swift in Sources */,
 				F6E653161FCCC01700881789 /* AppDelegate.swift in Sources */,
 				F6A448E81FCCCE31007F9237 /* ViewControllerTableViewCell.swift in Sources */,
+				F608F9E91FF22017005A3694 /* LoadingOverlayLogo.swift in Sources */,
 				F6A448DF1FCCC875007F9237 /* barDisplay.swift in Sources */,
 				F6A448E41FCCCA66007F9237 /* extensions.swift in Sources */,
 			);
