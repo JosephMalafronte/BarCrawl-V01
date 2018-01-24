@@ -66,12 +66,16 @@ public class LoadingOverlayLogo {
     public func hideOverlayView() {
         activityIndicator.stopAnimating()
         
-        UIView.animate(withDuration: 1, animations: {
+        UIView.animate(
+            withDuration: 1,
+            animations: {
             self.overlayView.frame.origin.y -= 750
-        }, completion: {(value: Bool) in
-            self.overlayView.removeFromSuperview()
+            }, completion: {(value: Bool) in
+                self.overlayView.removeFromSuperview()
             }
         )
+        
+        
     }
  
 }
