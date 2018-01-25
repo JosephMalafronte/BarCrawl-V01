@@ -16,6 +16,8 @@ let numDownloadCache = NSCache<AnyObject, AnyObject>()
 class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource  {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var NavBarTop: NSLayoutConstraint!
+    
     
     var ref: DatabaseReference!
     var databaseHandle: DatabaseHandle?
@@ -23,15 +25,27 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     var barDisplays = [barDisplay]()
     var allBarDisplaysCached = false
     
+    var beenLoaded = false
+    var barNames = [String]()
+    var destinationBar = String()
+    let dayNum =  Calendar.current.component(.weekday, from: Date())
+
+    
+    
     
     //Load First
     override func viewWillAppear(_ animated: Bool) {
         //Set White Status Bar
+        
         super.viewWillAppear(animated)
         UIApplication.shared.statusBarStyle = .lightContent
         
         //Hide Nav Controller
-        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+        if(beenLoaded == false) {self.navigationController?.setNavigationBarHidden(true, animated: animated)}
+        else {
+            NavBarTop.constant = 0
+            self.view.layoutIfNeeded()
+        }
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -59,7 +73,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         tableView.delegate=self
         tableView.dataSource=self
         
-        let logo = UIImage(named: "TextLogoNoBack.png")
+        let logo = UIImage(named: "TextLogoNoBackSmall.png")
         let imageView = UIImageView(image:logo)
         imageView.contentMode = .scaleAspectFit
         self.navigationItem.titleView = imageView
@@ -115,6 +129,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
                 }
                 overlayLogo.hideOverlayView()
                 self.viewWillDisappear(false)
+                self.beenLoaded = true
             }
             numDownloadCache.setObject(cachedNumObj, forKey: "num" as AnyObject)
         }
@@ -137,7 +152,10 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         
         //cell.barImage.loadImageUsingCacheWithUrlString(thisBarDisplay.barPictureUrl!)
         
-        let urlString = thisBarDisplay.barPictureUrl!
+        
+        
+        //Call getUrlString function
+        let urlString = getUrlStringByDay(barD: thisBarDisplay, dayNum: self.dayNum)
         
         //Paste
         cell.barImage.image = nil
@@ -146,6 +164,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         if let cachedImage = imageCache.object(forKey: urlString as AnyObject) as? UIImage {
             cell.barImage.image = cachedImage
             incDownloadImageCount(count: numberTotalBarDisplays)
+            barNames.append(cell.barName.text!)
         }
         else {
             //otherwise fire off a new download
@@ -165,6 +184,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
                         imageCache.setObject(downloadedImage, forKey: urlString as AnyObject)
                         
                         cell.barImage.image = downloadedImage
+                        self.barNames.append(cell.barName.text!)
                         
                         self.incDownloadImageCount(count: numberTotalBarDisplays)
 
@@ -174,14 +194,6 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
             }).resume()
         }
         
-        
-        
-        
-    
-        
-        
-        
-        
         if let barNameIns = thisBarDisplay.barName{
             cell.barName.text = barNameIns
         }
@@ -190,6 +202,37 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
         return (cell)
     }
     
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("row: \(indexPath.row)")
+         
+        print(barDisplays[indexPath.row].barName!)
+        destinationBar = barDisplays[indexPath.row].barName!
+        performSegue(withIdentifier: "SegueToBarPage", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?){
+        let BarPageController = segue.destination as! BarPageViewController
+        BarPageController.barName = destinationBar
+    }
+    
+    
+    
+    
+    func getUrlStringByDay(barD: barDisplay, dayNum: Int) -> String{
+        switch dayNum{
+            case 4 :
+                return barD.barPictureUrlWED!
+            case 5 :
+                return barD.barPictureUrlTHUR!
+            default :
+                return barD.barPictureUrl!
+        }
+        
+        
+        
+    }
     
     
     

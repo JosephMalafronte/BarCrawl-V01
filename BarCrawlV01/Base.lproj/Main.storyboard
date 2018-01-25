@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--BarCrawl-->
+        <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BarCrawlV01" customModuleProvider="target" sceneMemberID="viewController">
@@ -73,7 +73,7 @@
                                                 <constraint firstItem="vLg-Yg-qay" firstAttribute="top" secondItem="3Px-WG-ECk" secondAttribute="top" constant="-10" id="w3f-Wv-BGh"/>
                                             </constraints>
                                         </tableViewCellContentView>
-                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
                                             <outlet property="barImage" destination="vLg-Yg-qay" id="fLU-BU-1f9"/>
                                             <outlet property="barName" destination="Fuj-vB-Bac" id="uJL-x2-wjt"/>
@@ -82,31 +82,62 @@
                                 </prototypes>
                             </tableView>
                         </subviews>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="aI4-Mz-9hl" secondAttribute="trailing" id="0tW-u7-l3C"/>
                             <constraint firstItem="Rqv-JW-Pdw" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="CnM-Kp-LMY"/>
                             <constraint firstItem="aI4-Mz-9hl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Egp-zu-cWM"/>
                             <constraint firstItem="Rqv-JW-Pdw" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="PCd-1W-wOA"/>
                             <constraint firstItem="Rqv-JW-Pdw" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="sTm-6Q-z7P"/>
-                            <constraint firstItem="aI4-Mz-9hl" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="44" id="wtq-HN-Kur"/>
+                            <constraint firstItem="aI4-Mz-9hl" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="44" identifier="NavBarTop" id="wtq-HN-Kur"/>
                             <constraint firstItem="Rqv-JW-Pdw" firstAttribute="top" secondItem="aI4-Mz-9hl" secondAttribute="bottom" id="zCA-XC-hC1"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="BarCrawl" id="mKH-oz-Rqw"/>
+                    <navigationItem key="navigationItem" id="mKH-oz-Rqw"/>
                     <connections>
                         <outlet property="HomeView" destination="8bC-Xf-vdC" id="Uqm-3F-lVO"/>
+                        <outlet property="NavBarTop" destination="wtq-HN-Kur" id="N49-0J-dec"/>
                         <outlet property="tableView" destination="aI4-Mz-9hl" id="v4u-ef-WYp"/>
+                        <segue destination="FZj-j2-sOS" kind="show" identifier="SegueToBarPage" id="HbA-L2-aww"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1560.8" y="151.57421289355324"/>
         </scene>
+        <!--Bar Page View Controller-->
+        <scene sceneID="UWV-Ee-6bO">
+            <objects>
+                <viewController id="FZj-j2-sOS" customClass="BarPageViewController" customModule="BarCrawlV01" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wm0-V7-9BX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Label" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="riU-yp-cbf">
+                                <rect key="frame" x="101" y="155" width="172" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Flb-P2-ef2"/>
+                    </view>
+                    <navigationItem key="navigationItem" largeTitleDisplayMode="never" id="XYo-Rl-9Kx"/>
+                    <connections>
+                        <outlet property="BarLabel" destination="riU-yp-cbf" id="2Ad-0v-7LJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yJY-mw-ek6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2352.8000000000002" y="151.57421289355324"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="GA4-St-kTm">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IPH-9G-fiE" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jGn-eY-Tye" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="TLb-45-zev">
@@ -122,7 +153,6 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Jti-cT-O3b"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="IPH-9G-fiE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="718" y="152"/>
         </scene>

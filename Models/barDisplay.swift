@@ -12,11 +12,16 @@ import UIKit
 class barDisplay: NSObject {
     var barName : String?
     var barPictureUrl : String?
-    
+    var barPictureUrlWED : String?
+    var barPictureUrlTHUR : String?
     
     init(getData : [String: Any]) {
         self.barName = getData["barName"] as? String
         self.barPictureUrl = getData["barPictureUrl"] as? String
+        self.barPictureUrlWED = getData["barPictureUrlWED"] as? String
+        self.barPictureUrlTHUR = getData["barPictureUrlTHUR"] as? String
+
+
         /*if let numLikes = getData["LikesNumber"] as? String {
             self.numOfLikes = Int(numLikes)
         }*/
@@ -26,6 +31,12 @@ class barDisplay: NSObject {
     override init() {
         self.barName = ""
         self.barPictureUrl = ""
+        self.barPictureUrlWED = ""
+        self.barPictureUrlTHUR = ""
     }
+    
+    
+    
+    
 }
 
