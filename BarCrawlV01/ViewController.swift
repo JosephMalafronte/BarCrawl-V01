@@ -17,6 +17,8 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var NavBarTop: NSLayoutConstraint!
+    @IBOutlet weak var FarLeftButton: UIBarButtonItem!
+    @IBOutlet weak var CloseRightButton: UIBarButtonItem!
     
     
     var ref: DatabaseReference!
@@ -31,7 +33,14 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     let dayNum =  Calendar.current.component(.weekday, from: Date())
 
     
-    
+    //Utitlity Function for Resizing images
+    func imageWithImage(image:UIImage, scaledToSize newSize:CGSize) -> UIImage{
+        UIGraphicsBeginImageContextWithOptions(newSize, false, 0.0);
+        image.draw(in: CGRect(origin: CGPoint.zero, size: CGSize(width: newSize.width, height: newSize.height)))
+        let newImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
+        return newImage
+    }
     
     //Load First
     override func viewWillAppear(_ animated: Bool) {
@@ -46,6 +55,17 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
             NavBarTop.constant = 0
             self.view.layoutIfNeeded()
         }
+        
+        //Load button images
+        var FarLeftButtonImage = UIImage(named: "FarLeftButtonSmall.png")
+        FarLeftButtonImage = imageWithImage(image: FarLeftButtonImage!, scaledToSize: CGSize(width: 30, height: 20))
+        FarLeftButton.image = FarLeftButtonImage
+        
+        var CloseRightButtonImage = UIImage(named: "ProfileIcon.png")
+        CloseRightButtonImage = imageWithImage(image: CloseRightButtonImage!, scaledToSize: CGSize(width: 35, height: 35))
+        CloseRightButton.image = CloseRightButtonImage
+        
+
     }
     
     override func viewWillDisappear(_ animated: Bool) {

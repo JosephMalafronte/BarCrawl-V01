@@ -21,7 +21,8 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rqv-JW-Pdw">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <items>
-                                    <barButtonItem systemItem="done" id="80H-Hu-WUh">
+                                    <barButtonItem title="Item" id="80H-Hu-WUh">
+                                        <inset key="imageInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
                                         <color key="tintColor" red="0.94972819089889526" green="0.7828596830368042" blue="0.2734076976776123" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="wzO-TN-6ys"/>
@@ -29,7 +30,7 @@
                                         <color key="tintColor" red="0.94972819090000005" green="0.78285968299999997" blue="0.27340769770000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="KiZ-Wf-KhD"/>
-                                    <barButtonItem systemItem="bookmarks" id="mCs-kd-O7V">
+                                    <barButtonItem title="Item" id="mCs-kd-O7V">
                                         <color key="tintColor" red="0.94972819090000005" green="0.78285968299999997" blue="0.27340769770000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="hsB-pt-K2O"/>
@@ -61,7 +62,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="burger" translatesAutoresizingMaskIntoConstraints="NO" id="vLg-Yg-qay">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="TextLogoNoBackSmall" translatesAutoresizingMaskIntoConstraints="NO" id="vLg-Yg-qay">
                                                     <rect key="frame" x="-62" y="-24" width="375" height="256.5"/>
                                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </imageView>
@@ -96,6 +97,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="mKH-oz-Rqw"/>
                     <connections>
+                        <outlet property="CloseRightButton" destination="mCs-kd-O7V" id="eLC-Ns-BnA"/>
+                        <outlet property="FarLeftButton" destination="80H-Hu-WUh" id="fgm-Lp-QaQ"/>
                         <outlet property="HomeView" destination="8bC-Xf-vdC" id="Uqm-3F-lVO"/>
                         <outlet property="NavBarTop" destination="wtq-HN-Kur" id="N49-0J-dec"/>
                         <outlet property="tableView" destination="aI4-Mz-9hl" id="v4u-ef-WYp"/>
@@ -137,7 +140,6 @@
         <!--Navigation Controller-->
         <scene sceneID="GA4-St-kTm">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="IPH-9G-fiE" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="jGn-eY-Tye" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="TLb-45-zev">
@@ -153,11 +155,12 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Jti-cT-O3b"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IPH-9G-fiE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="718" y="152"/>
         </scene>
     </scenes>
     <resources>
-        <image name="burger" width="3269" height="2175"/>
+        <image name="TextLogoNoBackSmall" width="122" height="37"/>
     </resources>
 </document>
