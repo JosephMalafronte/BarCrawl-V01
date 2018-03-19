@@ -24,6 +24,8 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     var ref: DatabaseReference!
     var databaseHandle: DatabaseHandle?
     
+    var dayOfWeekDeal = "Wednesday Deals"
+    
     var barDisplays = [barDisplay]()
     var allBarDisplaysCached = false
     
@@ -218,6 +220,7 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
             cell.barName.text = barNameIns
         }
         
+        cell.dayText.text = dayOfWeekDeal;
         
         return (cell)
     }
@@ -243,11 +246,17 @@ class ViewController: UIViewController,UITableViewDelegate,UITableViewDataSource
     func getUrlStringByDay(barD: barDisplay, dayNum: Int) -> String{
         switch dayNum{
             case 4 :
-                return barD.barPictureUrlWED!
-            case 5 :
-                return barD.barPictureUrlTHUR!
-            default :
+                /*if let urlString = barD.barPictureUrlWED {
+                    return urlString
+                }*/
                 return barD.barPictureUrl!
+            case 5 :
+                return barD.barPictureUrl!
+            default :
+                if let urlString = barD.barPictureUrl {
+                    return urlString
+                }
+                return ""
         }
         
         

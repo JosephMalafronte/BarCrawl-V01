@@ -13,6 +13,7 @@ class ViewControllerTableViewCell: UITableViewCell {
     
     @IBOutlet weak var barImage: UIImageView!
     @IBOutlet weak var barName: UILabel!
+    @IBOutlet weak var dayText: UITextField!
     
     override func awakeFromNib() {
         super.awakeFromNib()
